@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 20px 20px;
+            text-align: center;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        .btn{
+            height: 20px;
+            width: 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #white{
+            background-color: #ffffff;
+            border: 2px solid black;
+        }
+        #pink{
+            background-color: #FFC0CB;
+            border: 2px solid black;
+        }
+        #skyblue{
+            background-color: #87CEEB;
+            border: 2px solid black;
+        }
+        #black{
+            background-color: #2c2f33;
+            border: 2px solid black;
+        }
+        #bg-changer{
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        #menu-bar{
+            background-color: cadetblue;
+            
+        }
+        #menu-bar ul li{
+            list-style-type: none;
+            padding: 10px 8px;
+            /* padding-left: 10px; */
+            /* padding-right: 10px; */
+            color: #ffffff;
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+        }
+        .sticky{
+            position: fixed;
+            top:0;
+            width: 97.4%;
+        }
+    </style>
+</head>
+<body> 
+    <div class="header">
+        <img src="https://www.suicideinfo.ca/wp-content/uploads/2016/07/Small-Talk-Logo.png" alt="quote" style="height: 150px; width: 150px;">
+    </div>
+
+    <div id="menu-bar" class="sticky">
+        <ul>
+            <li>Home</li>
+            <li>About us</li>
+            <li>Services</li>
+            <li>Contact us</li>
+        </ul>
+    </div>
+
+    <h1 class="text">About Us</h1>
+    <div id="bg-changer">
+        <span class="btn" id="white" onclick="changeBG('#ffffff')"></span>
+        <span class="btn" id="pink" onclick="changeBG('#FFC0CB')"></span>
+        <span class="btn" id="skyblue" onclick="changeBG('#87CEEB')"></span>
+        <span class="btn" id="black" onclick="changeBG('#000000')"></span>
+    </div>
+    <img src="https://svmsolutions.b-cdn.net/wp-content/uploads/2020/01/converting-about-us-page.jpg" alt="about-us">
+    <p class="text" style="text-align: justify ;">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod ea placeat, laborum explicabo ipsum fugiat, soluta vel 
+        quam delectus corrupti est eaque accusantium voluptate. Maxime repellendus mollitia adipisci aperiam! Eaque rerum quae ducimus voluptates voluptatibus,
+        saepe maiores illum praesentium quos, harum odit beatae blanditiis dolorem enim, fuga quis sit corporis nemo itaque asperiores necessitatibus assumenda
+         ipsa sint! Nulla dolore impedit sunt, qui tenetur deserunt deleniti vitae soluta dicta aspernatur cumque maxime obcaecati odit esse adipisci labore! 
+         Voluptatibus, laborum quidem sit porro ab quisquam sapiente non eligendi, expedita itaque adipisci maxime soluta. Consequuntur accusamus maiores porro 
+         nobis veritatis expedita ad omnis at ipsum fugiat dignissimos impedit, sunt sit exercitationem quisquam vero mollitia recusandae distinctio voluptatum 
+         architecto, voluptatem officiis praesentium. Tempora maxime omnis amet incidunt suscipit maiores voluptatum at. Commodi dolorum ea voluptate corporis 
+         earum blanditiis, nam neque magni eos laudantium sapiente delectus tempore ut repellendus ex expedita quia repudiandae amet illum explicabo consequatur 
+         error accusantium. Voluptas iure explicabo, temporibus, ullam soluta aliquam commodi praesentium blanditiis possimus at libero, dolore beatae velit cum 
+         nostrum labore. A porro impedit illum maxime! Voluptas magni autem iusto atque quas distinctio modi maxime aperiam labore dolore iste, dignissimos, 
+         quibusdam fugit tempora harum! Error cupiditate ullam vitae, soluta, atque excepturi veritatis architecto delectus, eum asperiores sapiente modi inventore. 
+        et vitae. Architecto numquam laudantium dolores consequuntur perferendis exercitationem tempora reprehenderit. Commodi, quam incidunt? Laboriosam dignissimos
+         enim, neque sequi animi quisquam placeat consectetur nulla nihil quidem consequatur mollitia eveniet, voluptatem reprehenderit corrupti eligendi 
+         quia doloribus adipisci. Quae, eveniet eum ipsam aperiam similique cumque rem!
+    </p>
+
+         <script>
+            // color = document.getElementById("bg-changer");
+
+            function changeBG(color){
+                document.body.style.backgroundColor = color;
+                let txt = document.getElementsByClassName("text");
+                if(color == "#000000"){
+                    for(let elm of txt){
+                        elm.style.color = "white";
+                    }
+                }
+                else{
+                    for(let elm of txt){
+                        elm.style.color = "black";
+                    }
+                }
+            }
+
+            window.addEventListener("scroll", function(){
+
+                let navbar = document.getElementById("menu-bar");
+
+                if(window.pageYOffset >= 154){
+                    navbar.classList.add("sticky");    
+                }
+                else{
+                    navbar.classList.remove("sticky");
+                }
+            });
+         </script>
+</body>
+</html>
